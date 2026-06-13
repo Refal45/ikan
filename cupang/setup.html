@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Setup Alami — CupangNusantara</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts: Inter + Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f0f7f0;
+        color: #1a3a2a;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 400;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      .logo-text,
+      .nav-link,
+      .card-title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.8rem;
+      }
+
+      /* HEADER - hijau transparan */
+      .site-header {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(60, 100, 70, 0.15);
+        background: rgba(240, 247, 240, 0.94);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 60;
+      }
+      .header-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: nowrap;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        flex-wrap: nowrap;
+      }
+      .logo-icon {
+        font-size: 1.8rem;
+        background: linear-gradient(140deg, #1f5e3a, #3b8f4c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(130deg, #1d6e3e, #3aa55d);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        white-space: nowrap;
+      }
+      .logo-badge {
+        background: #d9e8d9;
+        font-size: 0.65rem;
+        padding: 0.2rem 0.7rem;
+        border-radius: 100px;
+        font-weight: 600;
+        color: #1f6a3b;
+        white-space: nowrap;
+      }
+
+      /* navigasi desktop */
+      .nav-links {
+        display: flex;
+        gap: 0.2rem;
+        background: #e2f0e2;
+        padding: 0.2rem;
+        border-radius: 60px;
+      }
+      .nav-link {
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #2a5a3a;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-link i {
+        font-size: 0.85rem;
+        color: #3e8e54;
+      }
+      .nav-link:hover {
+        background: #cce4cc;
+        color: #173e24;
+      }
+      .nav-link.active {
+        background: #2b6e3f;
+        color: white;
+      }
+      .nav-link.active i {
+        color: white;
+      }
+
+      /* toggle menu (burger) */
+      .menu-toggle {
+        display: none;
+        background: #e0f0e0;
+        border: none;
+        font-size: 1.5rem;
+        color: #2d7744;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: center;
+      }
+      .menu-toggle:hover {
+        background: #cbe4cb;
+      }
+
+      /* SIDEBAR KANAN */
+      .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100%;
+        background: #fefef7;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        box-shadow: -6px 0 28px rgba(30, 60, 30, 0.15);
+        padding: 1.8rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #cbe2cb;
+      }
+      .mobile-sidebar.open {
+        transform: translateX(0);
+      }
+      .close-sidebar {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: #367e4a;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+      .mobile-nav-link {
+        padding: 0.7rem 0;
+        font-weight: 500;
+        color: #2a5438;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid #e2f0e2;
+      }
+      .mobile-nav-link.active {
+        color: #1f8a4a;
+        font-weight: 700;
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(30, 50, 30, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 990;
+        display: none;
+      }
+      .overlay.active {
+        display: block;
+      }
+
+      /* Setup grid khusus untuk 3 foto + deskripsi layout */
+      .setup-showcase {
+        margin: 2rem 0 2rem;
+      }
+      .setup-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .setup-card {
+        background: #ffffff;
+        border-radius: 1.4rem;
+        overflow: hidden;
+        border: 1px solid #d4e8d4;
+        transition: 0.2s;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+      }
+      .setup-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 24px rgba(40, 80, 40, 0.1);
+        border-color: #a8d0a8;
+      }
+      .setup-img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+        background: #eef3ee;
+      }
+      .setup-caption {
+        padding: 1rem;
+        background: #fefef9;
+        border-top: 1px solid #e2f0e2;
+      }
+      .setup-caption h3 {
+        font-size: 1.1rem;
+        color: #2a6e42;
+        margin-bottom: 0.3rem;
+      }
+      .setup-caption p {
+        font-size: 0.8rem;
+        color: #3b6b4f;
+        line-height: 1.4;
+      }
+
+      .layout-description {
+        background: #e5f3e5;
+        border-radius: 1.8rem;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border-left: 6px solid #3b9b5a;
+      }
+      .layout-description h3 {
+        font-size: 1.2rem;
+        color: #1f5a36;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .layout-description p {
+        font-size: 0.9rem;
+        color: #2a523a;
+        margin-bottom: 0.6rem;
+      }
+      .layout-description ul {
+        margin-left: 1.5rem;
+        font-size: 0.85rem;
+        color: #2a5a3a;
+      }
+      .layout-description li {
+        margin: 0.4rem 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin: 2rem 0 1rem;
+      }
+      .section-head h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1c542f;
+      }
+
+      /* FOOTER FULL WIDTH */
+      .premium-footer {
+        background: #1a3324;
+        color: #cfdfcf;
+        margin-top: 3rem;
+        padding: 2.5rem 0 1.8rem;
+        width: 100%;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      }
+      .footer-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 0 1.5rem;
+      }
+      .footer-col {
+        flex: 1;
+        min-width: 180px;
+      }
+      .footer-col h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        color: #b8e2b8;
+      }
+      .footer-col p,
+      .footer-col a {
+        font-size: 0.75rem;
+        color: #c6ddc6;
+        text-decoration: none;
+        line-height: 1.7;
+      }
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.8rem;
+      }
+      .footer-social a {
+        background: #2f5540;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        color: #e6f5e6;
+      }
+      .footer-social a:hover {
+        background: #4b9e66;
+        transform: translateY(-2px);
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(150, 190, 140, 0.25);
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        font-size: 0.7rem;
+        color: #b3ceb3;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .btn-soft {
+        background: #2c7a46;
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.2s;
+        font-size: 0.8rem;
+        border: none;
+      }
+      .btn-soft:hover {
+        background: #1f5f38;
+      }
+
+      /* lightbox */
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(12px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .lightbox.active {
+        display: flex;
+      }
+      .lightbox-img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 1rem;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 255, 240, 0.2);
+      }
+      .close-lightbox {
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-size: 2.2rem;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+      }
+      .close-lightbox:hover {
+        background: #2c7a46;
+      }
+      .lightbox-caption {
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        color: #eef5ee;
+        background: rgba(30, 50, 30, 0.7);
+        padding: 8px 16px;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        backdrop-filter: blur(8px);
+      }
+
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+        .menu-toggle {
+          display: flex;
+        }
+        .container {
+          padding: 0 1.2rem;
+        }
+        .footer-container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .logo-text {
+          font-size: 1.2rem;
+        }
+      }
+      @media (min-width: 801px) {
+        .mobile-sidebar,
+        .overlay {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+      <div class="logo" style="margin-bottom: 1.5rem; justify-content: flex-start">
+        <i class="fas fa-fish-fins logo-icon"></i>
+        <span class="logo-text">CupangNusantara</span>
+        <span class="logo-badge">koleksi pribadi</span>
+      </div>
+      <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link" id="mobileBeranda"><i class="fas fa-home"></i> Beranda</a>
+        <a href="galeri.html" class="mobile-nav-link" id="mobileGaleri"><i class="fas fa-fish"></i> Galeri Cupang</a>
+        <a href="perawatan.html" class="mobile-nav-link" id="mobilePerawatan"><i class="fas fa-leaf"></i> Perawatan</a>
+        <a href="setup.html" class="mobile-nav-link active" id="mobileSetup"><i class="fas fa-sun"></i> Setup Alami</a>
+      </div>
+      <div style="margin-top: auto; font-size: 0.7rem; color: #5f9c73; padding-top: 1rem"><i class="fas fa-sun"></i> sinar alami · koleksi pribadi</div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">
+          <i class="fas fa-fish-fins logo-icon"></i>
+          <span class="logo-text">CupangNusantara</span>
+          <span class="logo-badge">koleksi pribadi</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link" id="desktopBeranda"><i class="fas fa-home"></i> Beranda</a>
+          <a href="galeri.html" class="nav-link" id="desktopGaleri"><i class="fas fa-fish"></i> Galeri</a>
+          <a href="perawatan.html" class="nav-link" id="desktopPerawatan"><i class="fas fa-heart"></i> Perawatan</a>
+          <a href="setup.html" class="nav-link active" id="desktopSetup"><i class="fas fa-sun"></i> Setup</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggleBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="section-head">
+          <h2><i class="fas fa-sun" style="color: #3b9b5a; margin-right: 8px"></i> Setup Alami & Tata Letak</h2>
+          <a href="galeri.html" class="btn-soft"><i class="fas fa-fish"></i> Lihat Koleksi Cupang</a>
+        </div>
+        <p style="margin-bottom: 1rem; font-size: 0.85rem; color: #4a7c5e">
+          <i class="fas fa-leaf"></i> Berikut dokumentasi tata ruang semi-outdoor: aquarium besar, akuarium kaca kecil, wadah plastik, serta aksesoris unik seperti botol, kursi, toples.
+        </p>
+
+        <!-- 3 FOTO UTAMA setup1.jpeg / setup2.jpeg / setup3.jpeg -->
+        <div class="setup-showcase">
+          <div class="setup-grid" id="setupGrid">
+            <!-- akan diisi javascript agar konsisten dengan lightbox -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="premium-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4><i class="fas fa-fish-fins"></i> CupangNusantara</h4>
+          <p>Koleksi pribadi cupang premium & edukasi perawatan dengan cahaya alami. Bukan untuk dijual — hanya untuk kecintaan pada cupang.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Jelajahi</h4>
+          <p><a href="index.html">✦ Beranda </a></p>
+          <p><a href="galeri.html">✦ Galeri Cupang </a></p>
+          <p><a href="perawatan.html">✦ Perawatan Cupang </a></p>
+          <p><a href="setup.html">✦ Setup Alami</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Perawatan Kilat</h4>
+          <p><i class="fas fa-sun"></i> Sinar alami 6 jam/hari</p>
+          <p><i class="fas fa-droplet"></i> Ganti air rutin</p>
+          <p><i class="fas fa-apple-alt"></i> Pakan bervariasi</p>
+          <p><i class="fas fa-leaf"></i> Ekstrak ketapang</p>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak Pribadi</h4>
+          <p><i class="fas fa-envelope"></i> koleksi@cupangnusantara.com</p>
+          <p><i class="fab fa-whatsapp"></i> +62 812 3456 7890</p>
+          <p><i class="fas fa-map-marker-alt"></i> Depok, Indonesia</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> CupangNusantara — Koleksi pribadi, tidak diperjualbelikan. <i class="fas fa-heart" style="color: #76c98e"></i> Untuk kesenangan dan konservasi cupang.</p>
+        <p style="margin-top: 6px; font-size: 0.65rem"><i class="fas fa-sun"></i> Sepenuhnya menggunakan cahaya alami · semi outdoor setup</p>
+      </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+      <button class="close-lightbox" id="closeLightboxBtn"><i class="fas fa-times"></i></button>
+      <img class="lightbox-img" id="lightboxImg" alt="Preview HD" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+      (function () {
+        // Tahun dinamis footer
+        const yearSpan = document.getElementById('currentYear');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+        // MOBILE SIDEBAR
+        const sidebar = document.getElementById('mobileSidebar');
+        const overlay = document.getElementById('overlay');
+        const menuBtn = document.getElementById('menuToggleBtn');
+        const closeBtn = document.getElementById('closeSidebarBtn');
+        function openSidebar() {
+          sidebar.classList.add('open');
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeSidebar() {
+          sidebar.classList.remove('open');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        if (menuBtn) menuBtn.addEventListener('click', openSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+        document.querySelectorAll('.mobile-nav-link').forEach((link) => link.addEventListener('click', closeSidebar));
+
+        // aktif navigasi setup
+        const desktopSetup = document.getElementById('desktopSetup');
+        const mobileSetup = document.getElementById('mobileSetup');
+        if (desktopSetup) desktopSetup.classList.add('active');
+        if (mobileSetup) mobileSetup.classList.add('active');
+
+        // setup data foto (3 gambar)
+        const setupImages = [
+          { src: 'setup1.jpeg', title: 'Setup bagian tengah & kiri', desc: 'Aquarium gede di tengah, 3 plastik di kiri, botol di atas akuarium gede.' },
+          { src: 'setup2.jpeg', title: 'Area kanan & kursi', desc: '3 aquarium kecil kaca di kanan, kursi dengan 2 aquarium mini di atasnya.' },
+          { src: 'setup3.jpeg', title: 'Detail atas & toples', desc: 'Toples di atas aquarium mini, suasana natural dengan sinar alami.' },
+        ];
+
+        const setupGrid = document.getElementById('setupGrid');
+        if (setupGrid) {
+          setupImages.forEach((imgData, idx) => {
+            const card = document.createElement('div');
+            card.className = 'setup-card';
+            const img = document.createElement('img');
+            img.className = 'setup-img';
+            img.src = imgData.src;
+            img.alt = imgData.title;
+            img.loading = 'lazy';
+            img.onerror = function () {
+              this.src = 'https://placehold.co/600x450/E5F4E5/2C7A46?text=' + encodeURIComponent(imgData.title);
+            };
+            const captionDiv = document.createElement('div');
+            captionDiv.className = 'setup-caption';
+            captionDiv.innerHTML = `<h3><i class="fas fa-image"></i> ${imgData.title}</h3><p><i class="fas fa-location-dot"></i> ${imgData.desc}</p>`;
+            card.appendChild(img);
+            card.appendChild(captionDiv);
+            // lightbox click
+            card.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openLightbox(imgData.src, `${imgData.title} — ${imgData.desc}`);
+            });
+            setupGrid.appendChild(card);
+          });
+        }
+
+        // LIGHTBOX
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+
+        function openLightbox(imgUrl, captionText) {
+          lightboxImg.src = imgUrl;
+          lightboxCaption.textContent = captionText;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+          setTimeout(() => {
+            if (!lightbox.classList.contains('active')) lightboxImg.src = '';
+          }, 200);
+        }
+        if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+        });
+
+        // resize close sidebar
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 801 && sidebar.classList.contains('open')) closeSidebar();
+        });
+      })();
+    </script>
+  </body>
+</html>
