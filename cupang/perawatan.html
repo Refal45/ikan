@@ -16,8 +16,8 @@
       }
 
       body {
-        background: #e9f2f9; /* biru sangat muda */
-        color: #12344a;
+        background: #f0f7f0;
+        color: #1a3a2a;
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.5;
@@ -42,11 +42,11 @@
         padding: 0 1.8rem;
       }
 
-      /* HEADER - biru transparan */
+      /* HEADER - hijau transparan */
       .site-header {
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(30, 80, 120, 0.15);
-        background: rgba(233, 242, 249, 0.94);
+        border-bottom: 1px solid rgba(60, 100, 70, 0.15);
+        background: rgba(240, 247, 240, 0.94);
         backdrop-filter: blur(10px);
         position: sticky;
         top: 0;
@@ -68,7 +68,7 @@
       }
       .logo-icon {
         font-size: 1.8rem;
-        background: linear-gradient(140deg, #1a5a7a, #3a8aaa);
+        background: linear-gradient(140deg, #1f5e3a, #3b8f4c);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -76,19 +76,19 @@
       .logo-text {
         font-size: 1.5rem;
         font-weight: 700;
-        background: linear-gradient(130deg, #1a5a7a, #3a8aaa);
+        background: linear-gradient(130deg, #1d6e3e, #3aa55d);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         white-space: nowrap;
       }
       .logo-badge {
-        background: #d0e4f0;
+        background: #d9e8d9;
         font-size: 0.65rem;
         padding: 0.2rem 0.7rem;
         border-radius: 100px;
         font-weight: 600;
-        color: #1a5a7a;
+        color: #1f6a3b;
         white-space: nowrap;
       }
 
@@ -96,7 +96,7 @@
       .nav-links {
         display: flex;
         gap: 0.2rem;
-        background: #d4e6f2;
+        background: #e2f0e2;
         padding: 0.2rem;
         border-radius: 60px;
       }
@@ -105,7 +105,7 @@
         border-radius: 40px;
         font-size: 0.85rem;
         font-weight: 500;
-        color: #1a4a6a;
+        color: #2a5a3a;
         text-decoration: none;
         transition: all 0.2s ease;
         display: inline-flex;
@@ -114,14 +114,14 @@
       }
       .nav-link i {
         font-size: 0.85rem;
-        color: #3a7a9a;
+        color: #3e8e54;
       }
       .nav-link:hover {
-        background: #b8d4e8;
-        color: #0a2e4a;
+        background: #cce4cc;
+        color: #173e24;
       }
       .nav-link.active {
-        background: #1a5a7a;
+        background: #2b6e3f;
         color: white;
       }
       .nav-link.active i {
@@ -131,10 +131,10 @@
       /* toggle menu (burger) */
       .menu-toggle {
         display: none;
-        background: #d4e6f2;
+        background: #e0f0e0;
         border: none;
         font-size: 1.5rem;
-        color: #1a5a7a;
+        color: #2d7744;
         cursor: pointer;
         width: 44px;
         height: 44px;
@@ -143,7 +143,7 @@
         justify-content: center;
       }
       .menu-toggle:hover {
-        background: #b8d4e8;
+        background: #cbe4cb;
       }
 
       /* SIDEBAR KANAN */
@@ -153,15 +153,15 @@
         right: 0;
         width: 280px;
         height: 100%;
-        background: #f5fafd;
+        background: #fefef7;
         z-index: 1000;
         transform: translateX(100%);
         transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        box-shadow: -6px 0 28px rgba(20, 50, 80, 0.15);
+        box-shadow: -6px 0 28px rgba(30, 60, 30, 0.15);
         padding: 1.8rem 1.2rem;
         display: flex;
         flex-direction: column;
-        border-left: 1px solid #c0d8e8;
+        border-left: 1px solid #cbe2cb;
       }
       .mobile-sidebar.open {
         transform: translateX(0);
@@ -171,7 +171,7 @@
         background: none;
         border: none;
         font-size: 1.4rem;
-        color: #1a5a7a;
+        color: #367e4a;
         margin-bottom: 1rem;
         cursor: pointer;
       }
@@ -184,21 +184,21 @@
       .mobile-nav-link {
         padding: 0.7rem 0;
         font-weight: 500;
-        color: #1a4a6a;
+        color: #2a5438;
         text-decoration: none;
         display: flex;
         align-items: center;
         gap: 14px;
-        border-bottom: 1px solid #d4e6f2;
+        border-bottom: 1px solid #e2f0e2;
       }
       .mobile-nav-link.active {
-        color: #1a7a9a;
+        color: #1f8a4a;
         font-weight: 700;
       }
       .overlay {
         position: fixed;
         inset: 0;
-        background: rgba(20, 50, 80, 0.4);
+        background: rgba(30, 50, 30, 0.4);
         backdrop-filter: blur(4px);
         z-index: 990;
         display: none;
@@ -209,7 +209,7 @@
 
       /* konten perawatan */
       .hero-care {
-        background: linear-gradient(135deg, #d4e6f2 0%, #b8d4e8 100%);
+        background: linear-gradient(135deg, #e2f0e2 0%, #d0e6d0 100%);
         border-radius: 2rem;
         padding: 2rem;
         margin: 2rem 0 2rem;
@@ -224,22 +224,21 @@
       }
       .hero-text h1 {
         font-size: 1.8rem;
-        color: #0a3a5a;
+        color: #1f623a;
         margin-bottom: 0.5rem;
       }
       .hero-text p {
         font-size: 0.95rem;
-        color: #1a4a6a;
+        color: #2a5a3a;
         max-width: 600px;
       }
       .hero-icon {
         flex: 0 0 80px;
         font-size: 4rem;
-        color: #2a7a9a;
+        color: #3b9b5a;
         text-align: center;
       }
 
-      /* tips grid (umum) */
       .tips-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -249,7 +248,7 @@
       .tip-card {
         background: white;
         border-radius: 1.5rem;
-        border: 1px solid #c8dce8;
+        border: 1px solid #d4e8d4;
         padding: 1.5rem;
         transition: all 0.2s;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
@@ -257,194 +256,81 @@
       }
       .tip-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 22px rgba(20, 60, 100, 0.08);
-        border-color: #a0c4d8;
+        box-shadow: 0 12px 22px rgba(40, 80, 40, 0.08);
+        border-color: #b0d0b0;
       }
       .tip-icon {
         font-size: 2rem;
-        color: #2a7a9a;
+        color: #3b9b5a;
         margin-bottom: 1rem;
       }
       .tip-card h3 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
-        color: #1a5a7a;
+        color: #2a6e42;
       }
       .tip-card p,
       .tip-card ul {
         font-size: 0.85rem;
-        color: #1a4a6a;
+        color: #3b6b4f;
         margin-left: 1rem;
       }
       .tip-card li {
         margin: 0.3rem 0;
       }
 
-      /* ============================================ */
-      /* KARTU PENYAKIT DENGAN BADGE LINGKARAN PREMIUM */
-      /* ============================================ */
-      .disease-card {
-        background: #ffffff;
-        border-radius: 24px;
-        padding: 2rem 1.5rem 1.5rem 1.5rem;
-        /* padding atas ekstra untuk badge */
-        box-shadow: 0 8px 28px rgba(10, 50, 80, 0.08);
-        border: 1px solid #d0e4f0;
-        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-        position: relative;
-        margin-top: 1.8rem;
-        /* ruang untuk badge overlap */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* biarkan teks rata kiri */
-      }
-
-      .disease-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(10, 50, 80, 0.12);
-        border-color: #8ab8d0;
-      }
-
-      /* garis gradasi tipis di atas card */
-      .disease-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 1.5rem;
-        right: 1.5rem;
-        height: 3px;
-        background: linear-gradient(90deg, #1a6a8a, #4a9aba, #1a6a8a);
-        border-radius: 0 0 4px 4px;
-        opacity: 0.6;
-      }
-
-      /* BADGE LINGKARAN */
-      .card-logo {
-        position: absolute;
-        top: -28px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 64px;
-        height: 64px;
-        background: linear-gradient(135deg, #1a6a8a, #3a9aba);
-        border-radius: 50%;
-        display: flex;
+      /* --- FIN LOGO BADGE (untuk Sirip Sobek / Busuk) --- */
+      .fin-logo-badge {
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 20px rgba(20, 80, 120, 0.35);
-        transition: all 0.25s ease;
-        z-index: 5;
-        border: 3px solid white;
+        gap: 10px;
+        background: linear-gradient(135deg, #1f6a3b, #3aa55d);
+        color: #fff;
+        padding: 6px 20px 6px 14px;
+        border-radius: 60px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 12px rgba(43, 110, 63, 0.25);
+        margin-bottom: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-transform: uppercase;
+        width: fit-content;
       }
-
-      .card-logo i {
-        color: white;
-        font-size: 2rem;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-        transition: transform 0.25s ease;
+      .fin-logo-badge i {
+        font-size: 1.5rem;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
       }
-
-      .disease-card:hover .card-logo {
-        transform: translateX(-50%) scale(1.08);
-        box-shadow: 0 12px 28px rgba(20, 80, 120, 0.45);
+      .fin-logo-badge:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(43, 110, 63, 0.35);
       }
-
-      .disease-card:hover .card-logo i {
-        transform: scale(1.02);
+      .fin-logo-badge .badge-dot {
+        width: 6px;
+        height: 6px;
+        background: #b8f0c8;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 2px;
+        animation: pulse-dot 1.8s ease-in-out infinite;
       }
-
-      /* judul dan isi */
-      .disease-card h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #0a3a5a;
-        margin-top: 0.5rem;
-        margin-bottom: 0.75rem;
-        width: 100%;
-        text-align: center;
-      }
-
-      .disease-card p,
-      .disease-card ul {
-        font-size: 0.9rem;
-        color: #1a4a6a;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
-
-      .disease-card ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .disease-card ul li {
-        position: relative;
-        padding-left: 1.4rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .disease-card ul li::before {
-        content: '\f054';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: 0.65rem;
-        color: #3a8aaa;
-        position: absolute;
-        left: 0;
-        top: 0.1rem;
-      }
-
-      .disease-card p {
-        margin-bottom: 0.25rem;
-      }
-
-      /* responsive untuk badge */
-      @media (max-width: 600px) {
-        .card-logo {
-          width: 56px;
-          height: 56px;
-          top: -24px;
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(0.9);
         }
-        .card-logo i {
-          font-size: 1.6rem;
-        }
-        .disease-card {
-          padding: 1.8rem 1.2rem 1.2rem 1.2rem;
-          margin-top: 1.6rem;
-        }
-        .disease-card h3 {
-          font-size: 1.1rem;
-        }
-        .disease-card p,
-        .disease-card ul {
-          font-size: 0.85rem;
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
         }
       }
 
-      @media (max-width: 400px) {
-        .card-logo {
-          width: 48px;
-          height: 48px;
-          top: -20px;
-        }
-        .card-logo i {
-          font-size: 1.4rem;
-        }
-        .disease-card {
-          padding: 1.5rem 0.8rem 0.8rem 0.8rem;
-          margin-top: 1.4rem;
-        }
-      }
-
-      /* ============================================ */
-      /* jadwal & lainnya (tetap) */
       .schedule-table {
         background: #ffffff;
         border-radius: 1.5rem;
-        border: 1px solid #c8dce8;
+        border: 1px solid #d4e8d4;
         overflow-x: auto;
         margin: 2rem 0;
       }
@@ -454,20 +340,21 @@
         font-size: 0.85rem;
       }
       .schedule-table th {
-        background: #d4e6f2;
+        background: #e2f0e2;
         padding: 1rem;
         text-align: left;
         font-weight: 600;
-        color: #0a3a5a;
+        color: #1f623a;
       }
       .schedule-table td {
         padding: 0.8rem 1rem;
-        border-bottom: 1px solid #d4e6f2;
-        color: #1a4a6a;
+        border-bottom: 1px solid #e2f0e2;
+        color: #2a5a3a;
       }
       .schedule-table tr:last-child td {
         border-bottom: none;
       }
+      /* highlight puasa jumat */
       .fasting-row {
         background-color: #fef7e0;
       }
@@ -486,11 +373,11 @@
       .section-head h2 {
         font-size: 1.5rem;
         font-weight: 600;
-        color: #0a3a5a;
+        color: #1c542f;
       }
 
       .btn-soft {
-        background: #1a6a8a;
+        background: #2c7a46;
         color: white;
         padding: 0.5rem 1.2rem;
         border-radius: 50px;
@@ -504,13 +391,13 @@
         border: none;
       }
       .btn-soft:hover {
-        background: #0e4a6a;
+        background: #1f5f38;
       }
 
-      /* FOOTER FULL WIDTH (biru gelap) */
+      /* FOOTER FULL WIDTH */
       .premium-footer {
-        background: #0a2e4a;
-        color: #c8dce8;
+        background: #1a3324;
+        color: #cfdfcf;
         margin-top: 3rem;
         padding: 2.5rem 0 1.8rem;
         width: 100%;
@@ -535,12 +422,12 @@
         font-weight: 600;
         letter-spacing: 1px;
         margin-bottom: 1rem;
-        color: #8ac0d8;
+        color: #b8e2b8;
       }
       .footer-col p,
       .footer-col a {
         font-size: 0.75rem;
-        color: #b0d0e0;
+        color: #c6ddc6;
         text-decoration: none;
         line-height: 1.7;
       }
@@ -550,7 +437,7 @@
         margin-top: 0.8rem;
       }
       .footer-social a {
-        background: #1a4a6a;
+        background: #2f5540;
         width: 32px;
         height: 32px;
         border-radius: 50%;
@@ -558,19 +445,19 @@
         align-items: center;
         justify-content: center;
         transition: 0.2s;
-        color: #e6f5f5;
+        color: #e6f5e6;
       }
       .footer-social a:hover {
-        background: #3a8aaa;
+        background: #4b9e66;
         transform: translateY(-2px);
       }
       .footer-bottom {
         text-align: center;
-        border-top: 1px solid rgba(80, 140, 180, 0.25);
+        border-top: 1px solid rgba(150, 190, 140, 0.25);
         margin-top: 2rem;
         padding-top: 1.5rem;
         font-size: 0.7rem;
-        color: #a0c0d0;
+        color: #b3ceb3;
         max-width: 1280px;
         margin-left: auto;
         margin-right: auto;
@@ -602,6 +489,13 @@
         .hero-icon {
           order: -1;
         }
+        .fin-logo-badge {
+          font-size: 0.7rem;
+          padding: 4px 14px 4px 10px;
+        }
+        .fin-logo-badge i {
+          font-size: 1.2rem;
+        }
       }
       @media (min-width: 801px) {
         .mobile-sidebar,
@@ -625,7 +519,7 @@
         <a href="perawatan.html" class="mobile-nav-link active" id="mobilePerawatan"><i class="fas fa-leaf"></i> Perawatan</a>
         <a href="setup.html" class="mobile-nav-link" id="mobileSetup"><i class="fas fa-sun"></i> Setup Alami</a>
       </div>
-      <div style="margin-top: auto; font-size: 0.7rem; color: #3a8aaa; padding-top: 1rem"><i class="fas fa-sun"></i> sinar alami · koleksi pribadi</div>
+      <div style="margin-top: auto; font-size: 0.7rem; color: #5f9c73; padding-top: 1rem"><i class="fas fa-sun"></i> sinar alami · koleksi pribadi</div>
     </div>
 
     <header class="site-header">
@@ -656,7 +550,7 @@
           </div>
         </div>
 
-        <!-- TIPS PERAWATAN DALAM GRID (tetap) -->
+        <!-- TIPS PERAWATAN DALAM GRID -->
         <div class="section-head">
           <h2><i class="fas fa-lightbulb"></i> Tips Esensial</h2>
           <a href="setup.html" class="btn-soft"><i class="fas fa-sun"></i> Lihat Setup Alami</a>
@@ -694,7 +588,7 @@
           </div>
         </div>
 
-        <!-- JADWAL PERAWATAN MINGGUAN (tetap) -->
+        <!-- JADWAL PERAWATAN MINGGUAN (dengan PUASA JUMAT) -->
         <div class="section-head">
           <h2><i class="fas fa-calendar-week"></i> Jadwal Perawatan Rutin</h2>
         </div>
@@ -723,6 +617,7 @@
                 <td>Ganti air 10% + tambah daun ketapang (ganti yang lama)</td>
                 <td>Air teh encer tanda bagus</td>
               </tr>
+              <!-- BARIS JUMAT: PUASA -->
               <tr class="fasting-row">
                 <td>Jumat</td>
                 <td>Puasa (tidak diberi makan sama sekali)</td>
@@ -743,64 +638,59 @@
         </div>
 
         <!-- TAMBAHAN INFO PUASA -->
-        <div style="background: #dcecf5; border-radius: 1.2rem; padding: 1rem 1.5rem; margin: -0.5rem 0 1.5rem; border-left: 4px solid #3a8aaa">
-          <p style="font-size: 0.85rem; color: #1a5a7a">
+        <div style="background: #eef5e9; border-radius: 1.2rem; padding: 1rem 1.5rem; margin: -0.5rem 0 1.5rem; border-left: 4px solid #3b9b5a">
+          <p style="font-size: 0.85rem; color: #2f6a47">
             <i class="fas fa-info-circle"></i> <strong>Mengapa puasa setiap Jumat?</strong> Memberi istirahat pada saluran pencernaan cupang, mencegah sembelit, dan meniru kondisi alam di mana makanan tidak selalu tersedia. Cupang dewasa
             yang sehat sangat dianjurkan berpuasa 1 hari dalam seminggu.
           </p>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- PENYAKIT UMUM — 3 CARD DENGAN BADGE LINGKARAN DI ATAS CARD     -->
-        <!-- ============================================================ -->
+        <!-- TAMBAHAN: PENYAKIT UMUM -->
         <div class="section-head">
           <h2><i class="fas fa-shield-virus"></i> Pencegahan & Pengobatan Ringan</h2>
         </div>
-
         <div class="tips-grid" style="margin-bottom: 2rem">
-          <!-- CARD 1 : JAMUR / KAPAS -->
-          <div class="disease-card">
-            <div class="card-logo">
-              <i class="fas fa-skull-crossbones"></i>
-            </div>
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-skull"></i></div>
             <h3>Jamur / Kapas</h3>
-            <p>Penyebab: air kotor.</p>
-            <ul>
-              <li>karantina</li>
-              <li>beri metilen biru sesuai dosis</li>
-              <li>tingkatkan pergantian air.</li>
-            </ul>
+            <p>Penyebab: air kotor. Solusi: karantina, beri metilen biru sesuai dosis, tingkatkan pergantian air.</p>
           </div>
 
-          <!-- CARD 2 : SIRIP SOBEK / BUSUK -->
-          <div class="disease-card">
-            <div class="card-logo">
-              <i class="fas fa-fish-fins"></i>
-            </div>
-            <h3>Sirip Sobek / Busuk</h3>
-            <p>
-              Ganti air secara rutin,<br />
-              tambahkan daun ketapang untuk membantu mempercepat pemulihan sirip,<br />
-              kurangi stres pada ikan,<br />
-              dan bila diperlukan tambahkan garam akuarium sekitar 1 gram per liter air.
-            </p>
-          </div>
+        <!-- CARD SIRIP ROBEK / BUSUK -->
+<div class="tip-card" style="padding-top: 1rem">
 
-          <!-- CARD 3 : LESU & REWEL -->
-          <div class="disease-card">
-            <div class="card-logo">
-              <i class="fas fa-temperature-half"></i>
-            </div>
+  <!-- SIRIP ROBEK BADGE -->
+  <div class="fin-logo-badge">
+    <i class="fas fa-fish-fins"></i>
+    <span>Sirip Robek</span>
+    <span class="badge-dot"></span>
+  </div>
+
+  <!-- ICON -->
+  <div class="tip-icon">
+    <i class="fas fa-fish-fins"></i>
+  </div>
+
+  <!-- JUDUL -->
+  <h3>Sirip Sobek / Busuk</h3>
+
+  <!-- DESKRIPSI -->
+  <p>
+    Ganti air secara rutin, tambahkan daun ketapang untuk membantu
+    mempercepat pemulihan sirip, kurangi stres pada ikan, dan bila
+    diperlukan tambahkan garam akuarium sekitar 1 gram per liter air.
+  </p>
+
+</div>
+
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-temperature-low"></i></div>
             <h3>Lesu & Rewel</h3>
-            <p>
-              Cek suhu,<br />
-              pastikan 26–28°C.<br />
-              Beri pakan hidup (cacing sutra) untuk meningkatkan nafsu makan.
-            </p>
+            <p>Cek suhu, pastikan 26-28°C. Beri pakan hidup (cacing sutra) untuk meningkatkan nafsu makan.</p>
           </div>
         </div>
 
-        <p style="font-size: 0.8rem; color: #3a7a9a; margin-top: 1rem">
+        <p style="font-size: 0.8rem; color: #558d6e; margin-top: 1rem">
           <i class="fas fa-info-circle"></i> Catatan: Semua tips berdasarkan pengalaman pribadi merawat cupang di setup semi outdoor dengan cahaya alami. Konsistensi adalah kunci. Jangan lupa puasa setiap Jumat untuk kesehatan optimal.
         </p>
       </div>
@@ -841,7 +731,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> CupangNusantara — Koleksi pribadi, tidak diperjualbelikan. <i class="fas fa-heart" style="color: #6ab0d0;"></i> Untuk kesenangan dan konservasi cupang.</p>
+        <p>© <span id="currentYear"></span> CupangNusantara — Koleksi pribadi, tidak diperjualbelikan. <i class="fas fa-heart" style="color: #76c98e"></i> Untuk kesenangan dan konservasi cupang.</p>
         <p style="margin-top: 6px; font-size: 0.65rem"><i class="fas fa-sun"></i> Sepenuhnya menggunakan cahaya alami · semi outdoor setup · puasa rutin Jumat</p>
       </div>
     </footer>
