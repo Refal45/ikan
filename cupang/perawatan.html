@@ -62,17 +62,31 @@
       .logo {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         text-decoration: none;
         flex-wrap: nowrap;
       }
-      .logo-icon {
-        font-size: 1.8rem;
-        background: linear-gradient(140deg, #1f5e3a, #3b8f4c);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+      /* LOGO SIRIP — kotak ikon dengan latar */
+      .logo-fins {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(145deg, #1f5e3a, #3b8f4c);
+        border-radius: 14px 6px 14px 6px;
+        color: #f0fcf0;
+        font-size: 1.4rem;
+        box-shadow: 0 4px 12px rgba(30, 80, 40, 0.25);
+        transition: transform 0.2s;
       }
+      .logo:hover .logo-fins {
+        transform: scale(1.05) rotate(-2deg);
+      }
+      .logo-fins i {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+      }
+
       .logo-text {
         font-size: 1.5rem;
         font-weight: 700;
@@ -84,12 +98,14 @@
       }
       .logo-badge {
         background: #d9e8d9;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         padding: 0.2rem 0.7rem;
         border-radius: 100px;
         font-weight: 600;
         color: #1f6a3b;
         white-space: nowrap;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(60, 120, 70, 0.15);
       }
 
       /* navigasi desktop */
@@ -207,38 +223,98 @@
         display: block;
       }
 
-      /* konten perawatan */
+      /* HERO — dengan LOGO SIRIP BESAR */
       .hero-care {
         background: linear-gradient(135deg, #e2f0e2 0%, #d0e6d0 100%);
         border-radius: 2rem;
-        padding: 2rem;
+        padding: 2rem 2.5rem;
         margin: 2rem 0 2rem;
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-care::before {
+        content: '';
+        position: absolute;
+        right: -40px;
+        top: -40px;
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(circle, rgba(60, 160, 80, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
       }
       .hero-text {
         flex: 2;
+        position: relative;
+        z-index: 2;
       }
       .hero-text h1 {
         font-size: 1.8rem;
         color: #1f623a;
         margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .hero-text h1 i {
+        color: #3b9b5a;
+        font-size: 1.6rem;
       }
       .hero-text p {
         font-size: 0.95rem;
         color: #2a5a3a;
         max-width: 600px;
       }
-      .hero-icon {
-        flex: 0 0 80px;
-        font-size: 4rem;
-        color: #3b9b5a;
-        text-align: center;
+      /* LOGO SIRIP BESAR di hero */
+      .hero-logo-fins {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(4px);
+        padding: 0.8rem 1.2rem;
+        border-radius: 2rem;
+        border: 1px solid rgba(60, 140, 80, 0.2);
+        box-shadow: 0 8px 24px rgba(30, 80, 40, 0.08);
+        position: relative;
+        z-index: 2;
+      }
+      .hero-logo-fins .big-fin {
+        font-size: 3.4rem;
+        background: linear-gradient(145deg, #1f5e3a, #3b8f4c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+        filter: drop-shadow(0 4px 8px rgba(30, 80, 40, 0.2));
+      }
+      .hero-logo-fins .fin-label {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #2a6e42;
+        background: rgba(220, 240, 220, 0.7);
+        padding: 0.15rem 0.8rem;
+        border-radius: 100px;
+        border: 1px solid rgba(60, 140, 80, 0.2);
+      }
+      .hero-logo-fins .fin-sub {
+        font-size: 0.55rem;
+        color: #4d8a62;
+        font-weight: 400;
+        letter-spacing: 0.5px;
       }
 
+      /* tips grid */
       .tips-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -278,6 +354,7 @@
         margin: 0.3rem 0;
       }
 
+      /* schedule */
       .schedule-table {
         background: #ffffff;
         border-radius: 1.5rem;
@@ -305,7 +382,6 @@
       .schedule-table tr:last-child td {
         border-bottom: none;
       }
-      /* highlight puasa jumat */
       .fasting-row {
         background-color: #fef7e0;
       }
@@ -325,6 +401,13 @@
         font-size: 1.5rem;
         font-weight: 600;
         color: #1c542f;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .section-head h2 i {
+        color: #3b9b5a;
+        font-size: 1.3rem;
       }
 
       .btn-soft {
@@ -343,6 +426,30 @@
       }
       .btn-soft:hover {
         background: #1f5f38;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(40, 120, 60, 0.2);
+      }
+
+      /* info puasa */
+      .fasting-info {
+        background: #eef5e9;
+        border-radius: 1.2rem;
+        padding: 1rem 1.5rem;
+        margin: -0.5rem 0 1.5rem;
+        border-left: 4px solid #3b9b5a;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .fasting-info i {
+        color: #3b9b5a;
+        font-size: 1.1rem;
+        margin-top: 2px;
+      }
+      .fasting-info p {
+        font-size: 0.85rem;
+        color: #2f6a47;
+        margin: 0;
       }
 
       /* FOOTER FULL WIDTH */
@@ -374,6 +481,9 @@
         letter-spacing: 1px;
         margin-bottom: 1rem;
         color: #b8e2b8;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
       .footer-col p,
       .footer-col a {
@@ -381,6 +491,10 @@
         color: #c6ddc6;
         text-decoration: none;
         line-height: 1.7;
+      }
+      .footer-col a:hover {
+        color: #e6f5e6;
+        text-decoration: underline;
       }
       .footer-social {
         display: flex;
@@ -397,6 +511,7 @@
         justify-content: center;
         transition: 0.2s;
         color: #e6f5e6;
+        text-decoration: none;
       }
       .footer-social a:hover {
         background: #4b9e66;
@@ -415,7 +530,11 @@
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
+      .footer-bottom i.fa-heart {
+        color: #76c98e;
+      }
 
+      /* RESPONSIVE */
       @media (max-width: 800px) {
         .nav-links {
           display: none;
@@ -433,30 +552,81 @@
         .logo-text {
           font-size: 1.2rem;
         }
+        .logo-fins {
+          width: 38px;
+          height: 38px;
+          font-size: 1.2rem;
+        }
         .hero-care {
           flex-direction: column;
           text-align: center;
+          padding: 1.8rem 1.2rem;
         }
-        .hero-icon {
+        .hero-text h1 {
+          justify-content: center;
+        }
+        .hero-text p {
+          margin: 0 auto;
+        }
+        .hero-logo-fins {
           order: -1;
+          padding: 0.6rem 1rem;
+        }
+        .hero-logo-fins .big-fin {
+          font-size: 2.8rem;
+        }
+        .fasting-info {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .section-head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+        .section-head h2 {
+          font-size: 1.2rem;
         }
       }
+
       @media (min-width: 801px) {
         .mobile-sidebar,
         .overlay {
           display: none !important;
         }
       }
+      @media (max-width: 480px) {
+        .logo-badge {
+          display: none;
+        }
+        .hero-text h1 {
+          font-size: 1.3rem;
+        }
+        .hero-logo-fins .big-fin {
+          font-size: 2.2rem;
+        }
+        .tips-grid {
+          grid-template-columns: 1fr;
+        }
+        .schedule-table table {
+          font-size: 0.75rem;
+        }
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.5rem 0.6rem;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- OVERLAY & SIDEBAR -->
     <div class="overlay" id="overlay"></div>
     <div class="mobile-sidebar" id="mobileSidebar">
       <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
       <div class="logo" style="margin-bottom: 1.5rem; justify-content: flex-start">
-        <i class="fas fa-fish-fins logo-icon"></i>
+        <span class="logo-fins"><i class="fas fa-fish-fins"></i></span>
         <span class="logo-text">CupangNusantara</span>
-    
       </div>
       <div class="mobile-nav">
         <a href="index.html" class="mobile-nav-link" id="mobileBeranda"><i class="fas fa-home"></i> Beranda</a>
@@ -464,15 +634,18 @@
         <a href="perawatan.html" class="mobile-nav-link active" id="mobilePerawatan"><i class="fas fa-leaf"></i> Perawatan</a>
         <a href="setup.html" class="mobile-nav-link" id="mobileSetup"><i class="fas fa-sun"></i> Setup Alami</a>
       </div>
-      <div style="margin-top: auto; font-size: 0.7rem; color: #5f9c73; padding-top: 1rem"><i class="fas fa-sun"></i> sinar alami · koleksi pribadi</div>
+      <div style="margin-top: auto; font-size: 0.7rem; color: #5f9c73; padding-top: 1rem; border-top: 1px solid #e2f0e2">
+        <i class="fas fa-fish-fins"></i> sirip alami · koleksi pribadi
+      </div>
     </div>
 
+    <!-- HEADER -->
     <header class="site-header">
       <div class="container header-flex">
         <a href="index.html" class="logo">
-          <i class="fas fa-fish-fins logo-icon"></i>
+          <span class="logo-fins"><i class="fas fa-fish-fins"></i></span>
           <span class="logo-text">CupangNusantara</span>
-         
+          <span class="logo-badge"><i class="fas fa-fan"></i> SIRIP</span>
         </a>
         <nav class="nav-links">
           <a href="index.html" class="nav-link" id="desktopBeranda"><i class="fas fa-home"></i> Beranda</a>
@@ -484,19 +657,28 @@
       </div>
     </header>
 
+    <!-- MAIN -->
     <main>
       <div class="container">
+        <!-- HERO dengan LOGO SIRIP BESAR -->
         <div class="hero-care">
           <div class="hero-text">
-            <h1><i class="fas fa-heartbeat"></i> Panduan Perawatan Cupang</h1>
+            <h1>
+              <i class="fas fa-heartbeat"></i> Panduan Perawatan Cupang
+              <span style="font-size: 0.6rem; background: #cce4cc; padding: 0.15rem 0.8rem; border-radius: 100px; font-weight: 500; color: #1f623a; letter-spacing: 0.5px;">
+                <i class="fas fa-fish-fins"></i> SIRIP
+              </span>
+            </h1>
             <p>Rawat cupang kesayangan dengan metode alami — minim stres, warna cerah, dan umur panjang. Berdasarkan pengalaman koleksi pribadi.</p>
           </div>
-          <div class="hero-icon">
-            <i class="fas fa-fish"></i>
+          <div class="hero-logo-fins">
+            <span class="big-fin"><i class="fas fa-fish-fins"></i></span>
+            <span class="fin-label"><i class="fas fa-fan"></i> SIRIP CUPANG</span>
+            <span class="fin-sub">gerak · warna · gaya</span>
           </div>
         </div>
 
-        <!-- TIPS PERAWATAN DALAM GRID -->
+        <!-- TIPS PERAWATAN -->
         <div class="section-head">
           <h2><i class="fas fa-lightbulb"></i> Tips Esensial</h2>
           <a href="setup.html" class="btn-soft"><i class="fas fa-sun"></i> Lihat Setup Alami</a>
@@ -534,7 +716,7 @@
           </div>
         </div>
 
-        <!-- JADWAL PERAWATAN MINGGUAN (dengan PUASA JUMAT) -->
+        <!-- JADWAL PERAWATAN MINGGUAN -->
         <div class="section-head">
           <h2><i class="fas fa-calendar-week"></i> Jadwal Perawatan Rutin</h2>
         </div>
@@ -563,10 +745,9 @@
                 <td>Ganti air 10% + tambah daun ketapang (ganti yang lama)</td>
                 <td>Air teh encer tanda bagus</td>
               </tr>
-              <!-- BARIS JUMAT: PUASA -->
               <tr class="fasting-row">
-                <td>Jumat</td>
-                <td>Puasa (tidak diberi makan sama sekali)</td>
+                <td><i class="fas fa-moon"></i> Jumat</td>
+                <td><strong>Puasa</strong> (tidak diberi makan sama sekali)</td>
                 <td>Memberi jeda sistem pencernaan, mengurangi risiko kembung & meningkatkan kesehatan jangka panjang</td>
               </tr>
               <tr>
@@ -583,17 +764,15 @@
           </table>
         </div>
 
-        <!-- TAMBAHAN INFO PUASA -->
-        <div style="background: #eef5e9; border-radius: 1.2rem; padding: 1rem 1.5rem; margin: -0.5rem 0 1.5rem; border-left: 4px solid #3b9b5a">
-          <p style="font-size: 0.85rem; color: #2f6a47">
-            <i class="fas fa-info-circle"></i> <strong>Mengapa puasa setiap Jumat?</strong> Memberi istirahat pada saluran pencernaan cupang, mencegah sembelit, dan meniru kondisi alam di mana makanan tidak selalu tersedia. Cupang dewasa
-            yang sehat sangat dianjurkan berpuasa 1 hari dalam seminggu.
-          </p>
+        <!-- INFO PUASA -->
+        <div class="fasting-info">
+          <i class="fas fa-info-circle"></i>
+          <p><strong>Mengapa puasa setiap Jumat?</strong> Memberi istirahat pada saluran pencernaan cupang, mencegah sembelit, dan meniru kondisi alam di mana makanan tidak selalu tersedia. Cupang dewasa yang sehat sangat dianjurkan berpuasa 1 hari dalam seminggu.</p>
         </div>
 
-        <!-- TAMBAHAN: PENYAKIT UMUM -->
+        <!-- PENYAKIT UMUM -->
         <div class="section-head">
-          <h2><i class="fas fa-shield-virus"></i> Pencegahan & Pengobatan Ringan</h2>
+          <h2><i class="fas fa-shield-virus"></i> Pencegahan &amp; Pengobatan Ringan</h2>
         </div>
         <div class="tips-grid" style="margin-bottom: 2rem">
           <div class="tip-card">
@@ -608,27 +787,29 @@
           </div>
           <div class="tip-card">
             <div class="tip-icon"><i class="fas fa-temperature-low"></i></div>
-            <h3>Lesu & Rewel</h3>
+            <h3>Lesu &amp; Rewel</h3>
             <p>Cek suhu, pastikan 26-28°C. Beri pakan hidup (cacing sutra) untuk meningkatkan nafsu makan.</p>
           </div>
         </div>
 
-        <p style="font-size: 0.8rem; color: #558d6e; margin-top: 1rem">
-          <i class="fas fa-info-circle"></i> Catatan: Semua tips berdasarkan pengalaman pribadi merawat cupang di setup semi outdoor dengan cahaya alami. Konsistensi adalah kunci. Jangan lupa puasa setiap Jumat untuk kesehatan optimal.
+        <p style="font-size: 0.8rem; color: #558d6e; margin-top: 1rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <i class="fas fa-fish-fins" style="color: #3b9b5a; font-size: 1.2rem;"></i>
+          <span>Catatan: Semua tips berdasarkan pengalaman pribadi merawat cupang di setup semi outdoor dengan cahaya alami. Konsistensi adalah kunci. Jangan lupa puasa setiap Jumat untuk kesehatan optimal.</span>
         </p>
       </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="premium-footer">
       <div class="footer-container">
         <div class="footer-col">
           <h4><i class="fas fa-fish-fins"></i> CupangNusantara</h4>
-          <p>Koleksi pribadi cupang premium & edukasi perawatan dengan cahaya alami. Bukan untuk dijual — hanya untuk kecintaan pada cupang.</p>
+          <p>Koleksi pribadi cupang premium &amp; edukasi perawatan dengan cahaya alami. Bukan untuk dijual — hanya untuk kecintaan pada cupang.</p>
           <div class="footer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -654,11 +835,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> CupangNusantara — Koleksi pribadi, tidak diperjualbelikan. <i class="fas fa-heart" style="color: #76c98e"></i> Untuk kesenangan dan konservasi cupang.</p>
-        <p style="margin-top: 6px; font-size: 0.65rem"><i class="fas fa-sun"></i> Sepenuhnya menggunakan cahaya alami · semi outdoor setup · puasa rutin Jumat</p>
+        <p>© <span id="currentYear"></span> CupangNusantara — Koleksi pribadi, tidak diperjualbelikan. <i class="fas fa-heart"></i> Untuk kesenangan dan konservasi cupang.</p>
+        <p style="margin-top: 6px; font-size: 0.65rem"><i class="fas fa-fish-fins"></i> Sepenuhnya menggunakan cahaya alami · semi outdoor setup · puasa rutin Jumat</p>
       </div>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
       (function () {
         // Tahun dinamis footer
@@ -670,32 +852,40 @@
         const overlay = document.getElementById('overlay');
         const menuBtn = document.getElementById('menuToggleBtn');
         const closeBtn = document.getElementById('closeSidebarBtn');
+
         function openSidebar() {
           sidebar.classList.add('open');
           overlay.classList.add('active');
           document.body.style.overflow = 'hidden';
         }
+
         function closeSidebar() {
           sidebar.classList.remove('open');
           overlay.classList.remove('active');
           document.body.style.overflow = '';
         }
+
         if (menuBtn) menuBtn.addEventListener('click', openSidebar);
         if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
         if (overlay) overlay.addEventListener('click', closeSidebar);
-        document.querySelectorAll('.mobile-nav-link').forEach((link) => link.addEventListener('click', closeSidebar));
 
-        // aktif navigasi perawatan
+        document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+          link.addEventListener('click', closeSidebar);
+        });
+
+        // Aktif navigasi perawatan
         const desktopPerawatan = document.getElementById('desktopPerawatan');
         const mobilePerawatan = document.getElementById('mobilePerawatan');
         if (desktopPerawatan) desktopPerawatan.classList.add('active');
         if (mobilePerawatan) mobilePerawatan.classList.add('active');
 
-        // resize close sidebar
-        window.addEventListener('resize', () => {
+        // Tutup sidebar saat resize ke desktop
+        window.addEventListener('resize', function () {
           if (window.innerWidth >= 801 && sidebar.classList.contains('open')) closeSidebar();
         });
-        document.addEventListener('keydown', (e) => {
+
+        // Tutup dengan tombol ESC
+        document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
         });
       })();
